@@ -1,0 +1,490 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_interestRate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_depositToken",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ClaimedReward",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					}
+				],
+				"name": "DepositStake",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "ExistingStakeBrokenForRegisteringNewStake",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "createdBy",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "createdAt",
+						"type": "address"
+					}
+				],
+				"name": "RewardTokenCreation",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalStakes",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalReturns",
+						"type": "uint256"
+					}
+				],
+				"name": "WithdrawalOfAllStakeAndReward",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "checkAvailableReturns",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "checkClaimedDessert",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "claimReturns",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "duration",
+						"type": "uint256"
+					}
+				],
+				"name": "createDeposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "depositToken",
+				"outputs": [
+					{
+						"internalType": "contract IERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getUserStakeAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "getUserStakeDetails",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "amount",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "startTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "endTime",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "lastClaimTime",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct StakingContract.Stake",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "interestRate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "returnToken",
+				"outputs": [
+					{
+						"internalType": "contract ERC20",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					}
+				],
+				"name": "withdrawAllStakeAndRewards",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Allows users to stake a deposit token for a given time lock and earn rewards in a custom ERC20 token named DESSERT.",
+			"kind": "dev",
+			"methods": {
+				"checkAvailableReturns(address)": {
+					"params": {
+						"user": "The address of the user to retrieve the total available returns"
+					},
+					"returns": {
+						"_0": "The total available returns for the user"
+					}
+				},
+				"checkClaimedDessert(address)": {
+					"params": {
+						"user": "The address of the user to retrieve the total claimed DESSERT for"
+					},
+					"returns": {
+						"_0": "The total amount of DESSERT claimed by the user"
+					}
+				},
+				"claimReturns(address)": {
+					"details": "Calculates the returns for each stake that has ended and transfers the appropriate amount to the user. Updates the lastClaimTime for each stake that has ended. Emits the Claim event for each stake that has ended. Throws an error if no returns are available to claim.",
+					"params": {
+						"user": "The address of the user claiming returns"
+					}
+				},
+				"constructor": {
+					"details": "Constructor to initialize the interest rate, deposit token and return token. Return Token Smart Contract is deployed as part of the constructor, which is owned by this smart contract.",
+					"params": {
+						"_depositToken": "The address of the deposit token.",
+						"_interestRate": "The interest rate for staking."
+					}
+				},
+				"createDeposit(uint256,uint256)": {
+					"details": "Allows a user to create a new stake.",
+					"params": {
+						"amount": "The amount of deposit token to be staked.",
+						"duration": "The duration for which the stake will be locked."
+					}
+				},
+				"getUserStakeAmount(address)": {
+					"params": {
+						"user": "The address of the user to retrieve the total stakes for"
+					},
+					"returns": {
+						"_0": "The total amount of stakes for the user"
+					}
+				},
+				"getUserStakeDetails(address)": {
+					"params": {
+						"user": "The address of the user to retrieve stakes for"
+					},
+					"returns": {
+						"_0": "An array of all stakes for the user"
+					}
+				},
+				"withdrawAllStakeAndRewards(address)": {
+					"details": "Calculates the returns for each stake that has ended and transfers the appropriate amount to the user. Updates the lastClaimTime for each stake that has ended. Emits the Claim event for each stake that has ended. Throws an error if no returns are available to claim.",
+					"params": {
+						"user": "The address of the user claiming returns"
+					}
+				}
+			},
+			"title": "Staking Contract",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"checkAvailableReturns(address)": {
+					"notice": "Returns the total available returns for a user"
+				},
+				"checkClaimedDessert(address)": {
+					"notice": "Returns the total amount of DESSERT claimed by a user"
+				},
+				"claimReturns(address)": {
+					"notice": "Allows a user to claim their returns from their stakes"
+				},
+				"getUserStakeAmount(address)": {
+					"notice": "Returns the total amount that the user has staked, involving various stakes"
+				},
+				"getUserStakeDetails(address)": {
+					"notice": "Returns an array of all stakes for a user"
+				},
+				"withdrawAllStakeAndRewards(address)": {
+					"notice": "Allows a user to claim their returns from their stakes, as well as their invested stake."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TimeLockStakingDAPP/src/contracts/StakingContract.sol": "StakingContract"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0x4ffc0547c02ad22925310c585c0f166f8759e2648a09e9b489100c42f15dd98d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://15f52f51413a9de1ff191e2f6367c62178e1df7806d7880fe857a98b0b66253d",
+				"dweb:/ipfs/QmaQG1fwfgUt5E9nu2cccFiV47B2V78MM1tCy1qB7n4MsH"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a7d5b1ef5d8d5889ad2ed89d8619c09383b80b72ab226e0fe7bde1636481e34",
+				"dweb:/ipfs/QmebXWgtEfumQGBdVeM6c71McLixYXQP5Bk6kKXuoY4Bmr"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x8de418a5503946cabe331f35fe242d3201a73f67f77aaeb7110acb1f30423aca",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5a376d3dda2cb70536c0a45c208b29b34ac560c4cb4f513a42079f96ba47d2dd",
+				"dweb:/ipfs/QmZQg6gn1sUpM8wHzwNvSnihumUCAhxD119MpXeKp8B9s8"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6df0ddf21ce9f58271bdfaa85cde98b200ef242a05a3f85c2bc10a8294800a92",
+				"dweb:/ipfs/QmRK2Y5Yc6BK7tGKkgsgn3aJEQGi5aakeSPZvS65PV8Xp3"
+			]
+		},
+		"TimeLockStakingDAPP/src/contracts/DessertERC20.sol": {
+			"keccak256": "0x27d345b2bf4b1d971eb6a9c3b5ac45ef8e66d0f9ed27703d273f1fbe3ee6d530",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://63e4f1d04578d9894c661a17e553b7b80dfacf4215514a01636cf9f639134960",
+				"dweb:/ipfs/QmeME48dg1wBASxoVMuoGGa8vYstcUQorQaFumMhWsRhWo"
+			]
+		},
+		"TimeLockStakingDAPP/src/contracts/StakingContract.sol": {
+			"keccak256": "0x643dec94b4485151be22fd2b98b0b9ce7976c084e34405c47b419d28da31df59",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f99167530e681c4eb09bbc3e8e1b13005197ad9be192eef04ace92e3f4d4c24a",
+				"dweb:/ipfs/QmSGV8ePg9h9tDGSGWc7djux9VKf64DGDqFH7qQkPTYHvp"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x60b0215121bf25612a6739fb2f1ec35f31ee82e4a8216c032c8243d904ab3aa9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e29880d33dd479bb046ba306993d26ccb779a4b1d94a046cb3567f22948bb4d",
+				"dweb:/ipfs/QmfTY1qzPt5C63Wc7y6JqfZr5899NRvXYdCpyLzR5FXQic"
+			]
+		}
+	},
+	"version": 1
+}

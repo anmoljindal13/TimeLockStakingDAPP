@@ -43,6 +43,7 @@ contract StakingContract {
         interestRate = _interestRate;
         depositToken = IERC20(_depositToken);
         returnToken = new DESSERT();
+        console.log("Return token address : %s", address(returnToken));
         emit RewardTokenCreation(address(this), returnToken.name(), returnToken.symbol(), address(returnToken));
     }
     

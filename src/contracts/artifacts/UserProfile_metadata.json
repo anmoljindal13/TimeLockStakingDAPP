@@ -1,0 +1,179 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "pictureUrl",
+						"type": "string"
+					}
+				],
+				"name": "ProfileCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_pictureUrl",
+						"type": "string"
+					}
+				],
+				"name": "createProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "userInfos",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "pictureUrl",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "viewProfile",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "email",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "pictureUrl",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A smart contract for creating and viewing user profiles.",
+			"kind": "dev",
+			"methods": {
+				"createProfile(string,string,string)": {
+					"details": "The createProfile function allows a user to create a new profile by providing a name, email, and picture URL.       The function checks that each of these fields is not empty and that the user does not already have a profile.       The user's profile information is then stored in the userInfos mapping and a ProfileCreated event is emitted.",
+					"params": {
+						"_email": "Email of the user",
+						"_name": "Name of the user",
+						"_pictureUrl": "URL of the user's profile picture"
+					}
+				},
+				"viewProfile()": {
+					"details": "The viewProfile function allows anyone to view a user's profile information by calling the function with the user's Ethereum address as an argument.       The function checks that a profile exists for the user and returns their name, email, and picture URL.",
+					"returns": {
+						"email": "Email of the user",
+						"name": "Name of the user",
+						"pictureUrl": "URL of the user's profile picture"
+					}
+				}
+			},
+			"title": "ProfileCreation",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TimeLockStakingDAPP/src/contracts/UserProfile.sol": "UserProfile"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TimeLockStakingDAPP/src/contracts/UserProfile.sol": {
+			"keccak256": "0x8cc669c83383bb401cfc7344eb42104fc6ee76b9f8c38b2ffe55fa716d4e2521",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a04410ae7aaba850c51b536ecbae6342182cc875dfc8e6097b4f088fdcc84f4f",
+				"dweb:/ipfs/Qmep1qHf8tMuMvZXHU8YKfHQpykbYNZRXxJ6jkzj6NJeV8"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0x60b0215121bf25612a6739fb2f1ec35f31ee82e4a8216c032c8243d904ab3aa9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6e29880d33dd479bb046ba306993d26ccb779a4b1d94a046cb3567f22948bb4d",
+				"dweb:/ipfs/QmfTY1qzPt5C63Wc7y6JqfZr5899NRvXYdCpyLzR5FXQic"
+			]
+		}
+	},
+	"version": 1
+}

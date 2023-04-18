@@ -470,11 +470,11 @@
 			]
 		},
 		"TimeLockStakingDAPP/src/contracts/StakingContract.sol": {
-			"keccak256": "0x643dec94b4485151be22fd2b98b0b9ce7976c084e34405c47b419d28da31df59",
+			"keccak256": "0xc4066d9d66219e3041e4fdac2ce8feec3e1f4ee8455ab9a148116ebc5383b8ca",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f99167530e681c4eb09bbc3e8e1b13005197ad9be192eef04ace92e3f4d4c24a",
-				"dweb:/ipfs/QmSGV8ePg9h9tDGSGWc7djux9VKf64DGDqFH7qQkPTYHvp"
+				"bzz-raw://300270b05fea24a427b25c5b44aa9863cc6034b1325b723932c20519fcdfcef8",
+				"dweb:/ipfs/QmSDv6LWA5pi6W7xmMgnTS4LX2qgMdqeDUajFJqgpULYXd"
 			]
 		},
 		"hardhat/console.sol": {
